@@ -65,7 +65,7 @@ class GridWidget extends StatelessWidget {
                             border: Border.all(color: Colors.black, width: 1),
                           ),
                           child: CellWidget(
-                            cell: grid[gridRowIndex][gridColIndex], onTap: () {  },
+                            cell: grid[gridRowIndex][gridColIndex],   onTap: () => onCellTap(gridRowIndex, gridColIndex),
                           ),
                         );
                       } else if (rowIndex % 2 != 0 || colIndex % 2 != 0) {
