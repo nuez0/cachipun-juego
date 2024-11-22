@@ -18,7 +18,6 @@ class _CellWidgetState extends State<CellWidget> {
   @override
   Widget build(BuildContext context) {
     String displaySymbol;
-    // Mapear el símbolo al carácter o icono correspondiente
     switch (widget.cell.symbol) {
       case Symbol.rock:
         displaySymbol = '🪨';
@@ -32,9 +31,6 @@ class _CellWidgetState extends State<CellWidget> {
       case Symbol.equal:
         displaySymbol = '=';
         break;
-      case Symbol.different:
-        displaySymbol = 'X';
-        break;
       case Symbol.winsRight:
         displaySymbol = '<';
         break;
@@ -42,7 +38,7 @@ class _CellWidgetState extends State<CellWidget> {
         displaySymbol = '>';
         break;
       default:
-        displaySymbol = '';
+        displaySymbol = ''; // Celdas vacías
     }
 
     // Determinar el color de la celda
@@ -77,6 +73,14 @@ class _CellWidgetState extends State<CellWidget> {
         setState(() {
           isTapped = false;
         });
+      },
+      onTap: () {
+        if (widget.cell.symbol == null ||
+            widget.cell.symbol == Symbol.rock ||
+            widget.cell.symbol == Symbol.paper ||
+            widget.cell.symbol == Symbol.scissors) {
+          widget.onTap();
+        }
       },
       child: AnimatedContainer(
         duration: Duration(milliseconds: 100),

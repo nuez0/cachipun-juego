@@ -4,7 +4,6 @@ enum Symbol {
   paper,
   scissors,
   equal,       // =
-  different,   // X
   winsRight,   // <
   winsLeft     // >
 }

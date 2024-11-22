@@ -14,7 +14,6 @@ class SymbolSelector extends StatelessWidget {
       Symbol.paper,
       Symbol.scissors,
       Symbol.equal,
-      Symbol.different,
       Symbol.winsRight,
       Symbol.winsLeft,
     ];
@@ -36,9 +35,6 @@ class SymbolSelector extends StatelessWidget {
             break;
           case Symbol.equal:
             displaySymbol = '=';
-            break;
-          case Symbol.different:
-            displaySymbol = 'X';
             break;
           case Symbol.winsRight:
             displaySymbol = '<';
